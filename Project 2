@@ -1,0 +1,48 @@
+# Christina Ware
+# STAT 360
+# Project 2
+
+########## 1.
+
+# Write the function
+Summary <- function(x){
+
+# determine what type of vector was entered by user  
+  value <- is.numeric(x)
+  
+# if numerical, give mean,5numsum,&SD  
+  if (value == TRUE){
+  Mean <- mean(x)
+  num <- summary(x)
+  StDev <- sd(x)
+  S <- c(Mean = Mean, num, "Standard Deviation" = StDev)
+  return(S)}
+  
+# if character, give frequency table  
+  else {
+    return(table(x)) }}
+
+# Try character vector (ex)
+x <- c("M", "M", "F", "F", "M", "M", "M", "F")
+Summary(x)
+
+# Try numerical vector (ex)
+x <-  c(12, 20, 18, 32, 15, 20)
+Summary(x)
+
+
+########## 2.
+
+caps <- function(y){
+
+# capitalize each first letter
+  stri_trans_general(y, id = "Title") }
+
+# example
+y <- c("go","stOp","yelloW")
+caps(y)
+
+# mtcars example
+y <- mtcars
+names(y)
+caps(names(y))
